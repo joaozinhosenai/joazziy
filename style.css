@@ -1,0 +1,229 @@
+/* RESET E CORES GLOBAIS */
+:root {
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gray-dark: #333333;
+    --color-gray-medium: #666666;
+    --color-gray-light: #CCCCCC;
+    --font-primary: 'Roboto Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-white); 
+    color: var(--color-black); 
+    font-family: var(--font-primary);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--color-black);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-gray-medium); 
+}
+
+/* --- CABEÇALHO (HEADER) --- */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--color-black); 
+    position: sticky;
+    top: 0;
+    background-color: var(--color-white);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 5px; 
+}
+
+.main-nav a, .user-actions a {
+    margin-left: 25px;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+}
+
+/* --- BARRA DE PESQUISA COM VIDRO (GLASSMORHPISM) --- */
+
+.search-container {
+    padding: 10px 40px;
+    background-color: var(--color-gray-light); /* Fundo sutil para o Glass */
+}
+
+.glass-search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco semi-transparente */
+    backdrop-filter: blur(8px); /* EFEITO VIDRO */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    
+    border-radius: 8px; 
+    overflow: hidden;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1); 
+}
+
+.glass-search-bar input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    background: transparent; 
+    font-family: var(--font-primary);
+    font-size: 1em;
+    color: var(--color-black);
+}
+
+.glass-search-bar input:focus {
+    outline: none;
+}
+
+.glass-search-bar button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+.glass-search-bar button:hover {
+    background-color: var(--color-gray-dark);
+}
+
+/* --- CARROSSEL --- */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 80vh; 
+    overflow: hidden;
+    background-color: var(--color-black); 
+    color: var(--color-white); 
+    border-bottom: 5px double var(--color-white);
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1; /* Para o item ativo */
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%); /* Efeito P&B/Cinza */
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    z-index: 20;
+}
+
+.carousel-caption h1 {
+    font-size: 4em;
+    letter-spacing: 8px;
+    border-bottom: 1px solid var(--color-white);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.btn-shop {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid var(--color-white);
+    background-color: transparent;
+    font-weight: 700;
+    color: var(--color-white); /* Garante que o texto seja branco no banner preto */
+}
+
+.btn-shop:hover {
+    background-color: var(--color-white);
+    color: var(--color-black); 
+}
+
+/* --- GRID DE PRODUTOS --- */
+
+.product-grid {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.product-grid h2 {
+    font-size: 2em;
+    margin-bottom: 60px;
+    letter-spacing: 3px;
+    color: var(--color-gray-dark);
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.item {
+    display: block;
+    width: 300px;
+    text-align: left;
+}
+
+.item-img-placeholder {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    background-color: var(--color-gray-light);
+    margin-bottom: 15px;
+    border: 1px solid var(--color-gray-dark);
+}
+
+.item:hover .item-img-placeholder {
+    border-color: var(--color-black);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-name {
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    color: var(--color-gray-medium);
+    font-size: 0.9em;
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.75em;
+    color: var(--color-gray-dark);
+    border-top: 1px solid var(--color-gray-light);
+}
