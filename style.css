@@ -189,8 +189,14 @@ a:hover {
 
 .item {
     display: block;
-    width: 300px;
+    width: 400px;
     text-align: left;
+    /* Adicionando um efeito de transição para o hover */
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px); /* Leve levantamento no hover */
 }
 
 .item-img-placeholder {
@@ -200,6 +206,8 @@ a:hover {
     background-color: var(--color-gray-light);
     margin-bottom: 15px;
     border: 1px solid var(--color-gray-dark);
+    /* Adicionando transição para a imagem */
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .item:hover .item-img-placeholder {
